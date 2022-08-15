@@ -1,0 +1,27 @@
+﻿<a href="create">Create</a>
+<button type="button" ng-click="create()">Create</button>
+
+<h4>Search Table: <input type="text" ng-model="search1" /></h4>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Underage</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="student in students | filter:search1">
+            <td>{{student.name}}</td>
+            <td>{{student.age}}</td>
+            <td>{{student.address}}</td>
+            <td>{{student.age | isUnderage}}</td>
+            <td>
+                <button ng-click="edit(student, $index)">Edit</button>
+                <button ng-click="delete($index)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -20,6 +20,8 @@
             <th>Name</th>
             <th>Contact Number</th>
             <th>Email</th>
+            <th>is Active</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -29,8 +31,13 @@
             <td>{{user.ContactNumber}}</td>
             <td>{{user.Email}}</td>
             <td>
+                <label class="switch">
+                    <input type="checkbox" ng-model="user.Status" ng-change="changeStatus(user.Id, user.Status)" ng-true-value="true" ng-false-value="false"/>
+                    <span class="slider round"></span>
+                </label>
+            </td>
+            <td>
                 <button ng-click="edit(user.Id)">Edit</button>
-                <button ng-click="delete(user.Id)">Delete</button>
             </td>
         </tr>
     </tbody>

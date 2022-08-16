@@ -17,4 +17,19 @@ app.controller('listCtrl', function ($scope, $location, $rootScope) {
         $rootScope.userId = id;
         $location.path('update');
     }; 
+
+    $scope.changeStatus = function (userid, status) {
+        services.changeStatus(userid, status).then(function (result) {
+            if (result.status == 400) {
+                swal(result.data.Message, "", "error");
+            } else if (result.status == 500) {
+                swal("Internal Server Error","", "error");
+            } else if (result.status == 200) {
+                if (status == true)
+                    swal("Success", "Enabled User", "success");
+                if (status == false)
+                    swal("Success", "Disabled User", "success");
+            }
+        });
+    }
 });

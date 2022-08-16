@@ -114,6 +114,23 @@ app.service('services', function ($http, $window) {
         });
         return result;
     };
+
+    services.changeStatus = function(id, status){
+        var result =
+            $http({
+                method: 'DELETE',
+                url: surl + 'api/my/basura/users/' + id + '?status=' + status,
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                }
+            }).then(function (response) {
+                return response;
+            }, function (err) {
+                return err;
+            });
+        return result;
+    };
+
     return services;
 });
 

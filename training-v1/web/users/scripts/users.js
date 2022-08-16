@@ -60,7 +60,7 @@ app.service('services', function ($http, $window) {
     services.getUser = function (id) {
         var result = $http({
             method: 'GET',
-            url: surl + 'api/my/basura/users' + id,
+            url: surl + 'api/my/basura/users/' + id,
             headers: { 'Authorization': 'Bearer ' + token }
         }).then(function (response) {
             return response.data;
@@ -88,7 +88,7 @@ app.service('services', function ($http, $window) {
     services.updateUser = function (id, data) {
         var result = $http({
             method: 'PUT',
-            url: surl + 'api/my/basura/users' + id,
+            url: surl + 'api/my/basura/users/' + id,
             headers: { 'Authorization': 'Bearer ' + token },
             data: data
         }).then(function (response) {

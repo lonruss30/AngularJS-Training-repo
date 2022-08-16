@@ -1,6 +1,6 @@
 ﻿var app = angular.module('usersApp');
 
-app.controller('listCtrl', function ($scope, $location) {
+app.controller('listCtrl', function ($scope, $location, $rootScope) {
     $scope.page = 1;
     $scope.selectvalue = '15';
 
@@ -12,4 +12,9 @@ app.controller('listCtrl', function ($scope, $location) {
     $scope.create = function () {
         $location.path('create');
     }
+
+    $scope.edit = function (id) {
+        $rootScope.userId = id;
+        $location.path('update');
+    }; 
 });

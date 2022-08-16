@@ -1,27 +1,31 @@
-﻿
+﻿<h3>Hi {{profile.Name}}</h3>
 <button type="button" ng-click="create()">Create</button>
 
 <h4>Search Table: <input type="text" ng-model="search1" /></h4>
 <table>
     <thead>
         <tr>
+            <th>Id</th>
             <th>Name</th>
-            <th>Age</th>
-            <th>Address</th>
-            <th>Underage</th>
-            <th>Action</th>
+            <th>Contact Number</th>
+            <th>Email</th>
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="student in students | filter:search1">
-            <td>{{student.name}}</td>
-            <td>{{student.age}}</td>
-            <td>{{student.address}}</td>
-            <td>{{student.age | isUnderage}}</td>
+        <tr ng-repeat="user in data - (users  | filter:search1) | limitTo:selectvalue:selectvalue*(page-1)">
+            <td>{{user.Id}}</td>
+            <td>{{user.Name}}</td>
+            <td>{{user.ContactNumber}}</td>
+            <td>{{user.Email}}</td>
             <td>
-                <button ng-click="edit(student, $index)">Edit</button>
-                <button ng-click="delete($index)">Delete</button>
+                <button ng-click="edit(user.Id)">Edit</button>
+                <button ng-click="delete(user.Id)">Delete</button>
             </td>
         </tr>
     </tbody>
 </table>
+
+<div>
+    <uib-pagination class="pagination-sm pagination-sm pull-right" total-items="data.length" ng-model="page" 
+                    previous-text="&lsaquo;" next-text="&rsaquo;" items-per-page="selectvalue"></uib-pagination> 
+</div>

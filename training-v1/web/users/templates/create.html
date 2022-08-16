@@ -5,23 +5,27 @@
     </div>
     <div>
         <label>Password</label>
-        <input type="password" ng-model="user.Password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$" title="Minimum eight characters, at least one uppercase letter, one special character and one number"/>
+        <input type="password" ng-model="user.Password" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$" title="Minimum eight characters, at least one uppercase letter, one special character and one number" />
     </div>
     <div>
         <label>Confirm Password</label>
-        <input type="password" ng-model="user.ConfirmPassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$" title="Minimum eight characters, at least one uppercase letter, one special character and one number" validation-error="user.ConfirmPassword != user.Password?'The password and its confirmation do not match:'"/>  
+        <input type="password" ng-model="user.ConfirmPassword" required pattern="(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$" title="Minimum eight characters, at least one uppercase letter, one special character and one number" validation-error="user.ConfirmPassword != user.Password ? 'The password and its confirmation do not match':''" />
     </div>
     <div>
         <label>First Name</label>
-        <input type="text" ng-model="user.Firstname" required/>
+        <input type="text" ng-model="user.Firstname" required />
     </div>
     <div>
         <label>Last Name</label>
-        <input type="text" ng-model="user.Lastname" required/>
+        <input type="text" ng-model="user.Lastname" required />
+    </div>
+    <div>
+        <label>Email</label>
+        <input type="email" ng-model="user.Email" required />
     </div>
     <div>
         <label>Contact Number</label>
-        <input type="text" ng-model="user.ContactNumber" required/>
+        <input type="text" ng-model="user.ContactNumber" required />
     </div>
     <div>
         <label>User Type</label>
@@ -30,5 +34,5 @@
         </select>
     </div>
     <a href="list">Back</a>
-    <button type="submit")">Create</button>
+    <button type="submit">Create</button>
 </form>

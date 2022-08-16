@@ -1,1 +1,13 @@
-﻿This is signin
+﻿<form name="form" ng-submit="signin()">
+    <div>
+        <label>Username:</label>
+        <input type="text" ng-model="username" required/>
+    </div>
+    <div>
+        <label>Password:</label>
+        <input type="text" ng-model="password" required/>
+    </div>
+    <button type="submit">
+        Signin
+    </button>
+</form>

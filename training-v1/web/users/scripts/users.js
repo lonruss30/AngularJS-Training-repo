@@ -1,4 +1,4 @@
-﻿var app = angular.module('usersApp', ['ngRoute','angularUtils.directives.dirPagination', 'ui.bootsrap']);
+﻿var app = angular.module('usersApp', ['ngRoute', 'angularUtils.directives.dirPagination', 'ui.bootstrap']);
 
 app.controller('usersCtrl', function ($scope, services) {
     services.profile().then(function (result) {

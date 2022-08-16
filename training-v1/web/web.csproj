@@ -67,10 +67,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="contents\bootstrap.css" />
+    <Content Include="contents\slider.css" />
     <Content Include="scripts\angular-route.min.js" />
     <Content Include="scripts\angular.min.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\dirPagination.js" />
+    <Content Include="scripts\ui-bootstrap-tpls-1.0.3.js" />
     <Content Include="signin\index.html" />
     <Content Include="signin\scripts\signin.js" />
     <Content Include="signin\scripts\user.js" />

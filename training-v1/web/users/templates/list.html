@@ -12,7 +12,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr ng-repeat="user in data - (users  | filter:search1) | limitTo:selectvalue:selectvalue*(page-1)">
+        <tr ng-repeat="user in data = (users  | filter:search1) | limitTo:selectvalue:selectvalue*(page-1)">
             <td>{{user.Id}}</td>
             <td>{{user.Name}}</td>
             <td>{{user.ContactNumber}}</td>
@@ -26,6 +26,6 @@
 </table>
 
 <div>
-    <uib-pagination class="pagination-sm pagination-sm pull-right" total-items="data.length" ng-model="page" 
-                    previous-text="&lsaquo;" next-text="&rsaquo;" items-per-page="selectvalue"></uib-pagination> 
+    <uib-pagination class="pagination-sm pagination" total-items="data.length" ng-model="page" 
+                    previous-text="&lsaquo;" next-text="&rsaquo;" items-per-page=selectvalue></uib-pagination> 
 </div>

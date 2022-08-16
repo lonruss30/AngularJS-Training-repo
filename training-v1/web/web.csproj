@@ -67,7 +67,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="contents\bootstrap-lumen.css" />
     <Content Include="contents\bootstrap.css" />
     <Content Include="contents\slider.css" />
     <Content Include="scripts\angular-route.min.js" />

@@ -1,11 +1,22 @@
 ﻿<h3>Hi {{profile.Name}}</h3>
 <button type="button" ng-click="create()">Create</button>
+<br />
 
 <h4>Search Table: <input type="text" ng-model="search1" /></h4>
+<br />
+
+<div>
+    <label class="pull-left n-t-10 m-i-10">Items per page:</label>
+    <select ng-model="selectvalue" class="form-control" style="width:80px;">
+        <option value="15">15</option>
+        <option value="30">30</option>
+        <option value="45">45</option>
+        <option value="60">60</option>
+    </select>
+</div>
 <table>
     <thead>
         <tr>
-            <th>Id</th>
             <th>Name</th>
             <th>Contact Number</th>
             <th>Email</th>
@@ -13,7 +24,7 @@
     </thead>
     <tbody>
         <tr ng-repeat="user in data = (users  | filter:search1) | limitTo:selectvalue:selectvalue*(page-1)">
-            <td>{{user.Id}}</td>
+            
             <td>{{user.Name}}</td>
             <td>{{user.ContactNumber}}</td>
             <td>{{user.Email}}</td>

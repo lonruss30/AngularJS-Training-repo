@@ -1,6 +1,6 @@
 ﻿var app = angular.module('usersApp');
 
-app.controller('listCtrl', function ($scope) {
+app.controller('listCtrl', function ($scope, $location) {
     $scope.page = 1;
     $scope.selectvalue = '15';
 
@@ -8,4 +8,8 @@ app.controller('listCtrl', function ($scope) {
         $scope.users = result;
         console.log(result);
     });
+
+    $scope.create = function () {
+        $location.path('create');
+    }
 });

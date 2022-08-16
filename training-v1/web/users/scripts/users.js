@@ -98,7 +98,40 @@ app.service('services', function ($http, $window) {
         });
         return result;
     };
+
+    services.getUsertypes = function () {
+        var result = $http({
+            method: 'GET',
+            url: surl + 'api/my/basura/user/types?status=active',
+            headers: { 'Authorization': 'Bearer ' + token }
+        }).then(function (response) {
+            return response.data;
+        }, function (err) {
+            if (err.status == 401) {
+                $window.location.href = "login/index.html"
+            }
+            return err;
+        });
+        return result;
+    };
     return services;
+});
+
+app.directive('validationError', function () {
+    return {
+        restrict: 'A',
+        require: 'ngModel',
+        link: function (scope, elem, attrs, ctrl) {
+            scope.$watch(attrs['validationError'], function (errMsg) {
+                if (elem[0] && elem[0].setCustomValidity) {
+                    elem[0].setCustomValidity(errMsg);
+                }
+                if (ctrl) {
+                    ctrl.$setValidity('validationError', errMsg ? false : true);
+                }
+            });
+        }
+    }
 });
 
 

@@ -1,18 +1,7 @@
 ﻿<a href="create">Create</a>
 <button type="button" ng-click="create()">Create</button>
-<br />
-<br />
-    <label>show search</label>
-    <input type="checkbox" ng-model="showSearch" ng-true-value="true" ng-false-value="false" />
-   
-    <h4 ng-show="showSearch" >
-        Search Table: <input type="text" ng-model="search1" ng-disabled="searchDisable" />
-    </h4>
-       
-    <label>disable search</label>
-    <input type="checkbox" ng-model="searchDisable" ng-true-value="true" ng-false-value="false" />
-<br />
 
+<h4>Search Table: <input type="text" ng-model="search1" /></h4>
 <table>
     <thead>
         <tr>
